@@ -8,10 +8,10 @@
     <h1 style="padding-top:10px;padding-bottom:10px">@yield('title')</h1>
 
     <div class="col-6" style="padding-bottom:50px">
-      
+
         <form method="POST" action="/students">
         @csrf
-        
+
         <div class="form-group">
           <label for="nama">Nama</label>
           <input type="text" class="form-control @error('nama') is-invalid @enderror" id="nama" placeholder="Masukan Nama" name="nama" value="{{ old('nama') }}">
@@ -44,12 +44,6 @@
         <div class="form-group">
             <label for="datepicker">Tanggal Lahir</label>
             <input type="text" class="date form-control" id="datepicker" name="datepicker">
-            <script type="text/javascript">
-              $('#datepicker').datepicker({
-                  autoclose: true,
-                  format: 'yyyy-mm-dd'
-               });
-          </script>
         </div>
 
         <div class="form-group">
@@ -82,7 +76,7 @@
         </div>
 
         <button type="submit" class="btn btn-primary">Simpan</button>
-          
+
       </form>
     </div>
 

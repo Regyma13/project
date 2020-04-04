@@ -26,8 +26,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
 
-        
-        
+
+
         <!-- Navbar -->
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
             <!-- Left navbar links -->
@@ -39,22 +39,22 @@ scratch. This page gets rid of all links and provides the needed markup only.
         </nav>
         <!-- /.navbar -->
 
-        
-        
+
+
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
             <a href="#" class="brand-link" style="text-align:center">Aplikasi SKPI</a>
 
             <!-- Sidebar -->
-            <div class="sidebar">                
+            <div class="sidebar">
 
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                         data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->      
+               with font-awesome or any other icon font library -->
                                 <li class="nav-item">
                                     <a href="/home" class="nav-link">
                                         <i class="fa fa-chart-pie nav-icon"></i>
@@ -75,13 +75,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <!-- /.sidebar -->
         </aside>
 
-        
-        
-        
-        
-        
-        
-        
+
+
+
+
+
+
+
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper" style="padding-top:10px">
             @yield('content')
@@ -110,6 +110,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- REQUIRED SCRIPTS -->
 
     <script src="{{ asset('js/app.js') }}"></script>
+    <script>
+        $(document).ready(function() {
+            $('#datepicker').datepicker({
+                format: 'yyyy-mm-dd',
+            })
+        })
+    </script>
 </body>
 
 </html>
