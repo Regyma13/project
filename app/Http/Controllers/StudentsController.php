@@ -49,7 +49,7 @@ class StudentsController extends Controller
             Student::create($request->all());
             return redirect('/students')->with('status','Data Berhasil Tersimpan');
         } catch (\Throwable $th) {
-            dd($th);
+            return back()->withErrors($th);
         }
     }
 
