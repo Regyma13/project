@@ -36,17 +36,21 @@ class StudentsController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'nama' => 'required',
-            'npm' => 'required|size:7',
-            'kelamin' => 'required',
-            'jurusan' => 'required',
-            'kelas' => 'required',
-            'email' => 'required'
-        ]);
-        
-        Student::create($request->all());
-        return redirect('/students')->with('status','Data Berhasil Tersimpan');
+        try {
+            $this->validate($request,[
+                'nama' => 'required',
+                'npm' => 'required|digits:7',
+                'kelamin' => 'required',
+                'jurusan' => 'required',
+                'kelas' => 'required',
+                'email' => 'required'
+            ]);
+
+            Student::create($request->all());
+            return redirect('/students')->with('status','Data Berhasil Tersimpan');
+        } catch (\Throwable $th) {
+            dd($th);
+        }
     }
 
     /**
