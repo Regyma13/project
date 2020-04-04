@@ -19,4 +19,17 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Dashboard
+Route::get('/home', 'HomeController@index');
+
+// Student all
+//Route::resource('students', 'StudentsController');
+
+// Student (satu-satu)
+Route::get('/students', 'StudentsController@index');
+Route::get('/students/create', 'StudentsController@create');
+Route::post('/students', 'StudentsController@store');
+Route::get('/students/{student}', 'StudentsController@show');
+Route::delete('/students/{student}', 'StudentsController@destroy');
+Route::get('/students/{student}/edit', 'StudentsController@edit');
+Route::patch('/students/{student}', 'StudentsController@update');
